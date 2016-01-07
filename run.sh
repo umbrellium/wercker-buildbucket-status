@@ -19,7 +19,7 @@ fi
 
 json="{\"state\": \"$WERCKER_BITBUCKET_BUILDSTATUS_STATE\", \"key\": \"$WERCKER_BUILD_ID\", \"name\": \"$WERCKER_APPLICATION_NAME\", \"url\": \"$WERCKER_BUILD_URL\", \"description\": \"$WERCKER_BITBUCKET_BUILDSTATUS_DESCRIPTION\"}"
 
-RESULT=$(curl -u "$WERCKER_BITBUCKET_BUILDSTATUS_USERNAME:$WERCKER_BITBUCKET_BUILDSTATUS_PASSWORD" -X POST -d "$json" -H "Content-Type: application/json" "$WERCKER_BITBUCKET_BUILDSTATUS_URL" --output "$WERCKER_STEP_TEMP/result.txt" -w "%{http_code}")
+RESULT=$(curl -u "$WERCKER_BITBUCKET_BUILDSTATUS_USERNAME:$WERCKER_BITBUCKET_BUILDSTATUS_PASSWORD" -X POST -d "$json" -H "Content-Type: application/json" "$WERCKER_BITBUCKET_BUILDSTATUS_URL" -w "%{http_code}")
 
 if [ "$RESULT" = "500" ]; then
   fatal "Server error on Bitbucket"
