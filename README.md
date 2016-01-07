@@ -1,6 +1,7 @@
 # step-bitbucket-buildstatus
 
-A wercker step for sending build status to Bitbucket's build status API.
+A wercker step for sending build status to Bitbucket, via their RESTful build
+status API.
 
 # Options
 
