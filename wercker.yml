@@ -1,5 +1,6 @@
 box: wercker/default
+
 build:
-  steps:
-    - shellcheck:
-      file: run.sh
+    steps:
+        - shellcheck:
+            file: run.sh
